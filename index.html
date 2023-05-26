@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Messaging App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Messaging App</h1>
+        <div class="messages">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        <form action="{{ url_for('send') }}" method="post">
+            <input type="text" name="message" placeholder="Type your message">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
